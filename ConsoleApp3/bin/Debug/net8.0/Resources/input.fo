@@ -1,26 +1,61 @@
+<?xml version="1.0"?>
 <fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
   <fo:layout-master-set>
     <fo:simple-page-master master-name="A4">
       <fo:region-body/>
     </fo:simple-page-master>
   </fo:layout-master-set>
+
   <fo:page-sequence master-reference="A4">
     <fo:flow flow-name="xsl-region-body">
-      <fo:block>Hello from XSL-FO</fo:block>
+
+      <!-- styled heading -->
+      <fo:block font-weight="bold" font-size="18pt" color="#003366" text-align="center" background-color="#DDDDDD">
+        Financial Report 2025
+      </fo:block>
+
+      <!-- paragraph -->
+      <fo:block font-size="12pt" color="#333333" text-align="justify">
+        This report summarizes the quarterly performance for the year 2025, using a consistent and professional style.
+      </fo:block>
+
+      <!-- inline styling -->
+      <fo:block font-size="12pt" color="#333333">
+        The <fo:inline font-weight="bold" color="red">net profit</fo:inline> increased by 15% compared to last year.
+      </fo:block>
+
+      <!-- table with styled cells -->
       <fo:block>
-        <fo:table>
+        <fo:table border="0.5pt solid black">
           <fo:table-body>
             <fo:table-row>
-              <fo:table-cell><fo:block>Name</fo:block></fo:table-cell>
-              <fo:table-cell><fo:block>Srinath</fo:block></fo:table-cell>
+              <fo:table-cell background-color="#f0f0f0" text-align="center">
+                <fo:block font-weight="bold">Quarter</fo:block>
+              </fo:table-cell>
+              <fo:table-cell background-color="#f0f0f0" text-align="center">
+                <fo:block font-weight="bold">Revenue</fo:block>
+              </fo:table-cell>
             </fo:table-row>
             <fo:table-row>
-              <fo:table-cell><fo:block>Role</fo:block></fo:table-cell>
-              <fo:table-cell><fo:block>Software Engineer</fo:block></fo:table-cell>
+              <fo:table-cell text-align="center">
+                <fo:block>Q1</fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="right">
+                <fo:block>$1,200,000</fo:block>
+              </fo:table-cell>
+            </fo:table-row>
+            <fo:table-row>
+              <fo:table-cell text-align="center">
+                <fo:block>Q2</fo:block>
+              </fo:table-cell>
+              <fo:table-cell text-align="right">
+                <fo:block>$1,400,000</fo:block>
+              </fo:table-cell>
             </fo:table-row>
           </fo:table-body>
         </fo:table>
       </fo:block>
+
     </fo:flow>
   </fo:page-sequence>
 </fo:root>
